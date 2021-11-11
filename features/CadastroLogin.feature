@@ -24,7 +24,7 @@ AND o funcionário é direcionado para a área de "login"
 
 Scenario: Cadastro de um usuário que não preencheu todos os campos
 GIVEN a usuária "Ana Catarina" está na "área de cadastro"
-AND a usuária "Ana Catarina" não fornece todas as informações necessárias
+AND a usuária "Ana Catarina" fornece seu nome, "Ana Catarina", CPF "10299388490", email "anacatarina@gmail.com", endereço "Rua 12, número 13", mas não fornece seu "telefone" e nem a sua "senha"
 WHEN a usuária tenta finalizar o cadastro
 THEN o cadastro da usuária não é efetuado com sucesso
 AND a mensagem "um ou mais campos não foram preenchidos!" aparece na tela
