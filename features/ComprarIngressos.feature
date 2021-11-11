@@ -9,6 +9,7 @@ GIVEN a cliente "Ana Catarina" está na tela "filmes"
 AND ela seleciona o filme "Duna"
 AND o filme tem "10" lugares disponíveis  
 AND a cliente "Ana Catarina" tenta comprar "2" ingressos para o filme "Duna"
+AND a cliente "Ana Catarina" não está cadastrada
 WHEN ela confirma a compra
 THEN a compra não é efetuada com sucesso
 AND a mensagem "Compra negada, login não efetuado." aparecerá na tela
@@ -39,6 +40,7 @@ GIVEN a cliente "Livia" está na tela "filmes"
 AND ela seleciona o filme "Duna"
 AND o filme tem "10" lugares disponíveis  
 AND a cliente "Livia" tenta comprar "2" ingressos para o filme "Duna"
+AND a cliente "Livia" seleciona "0" lugares
 WHEN ela confirma a compra
 THEN a compra não é efetuada com sucesso
 AND a mensagem "Selecione os lugares" aparecerá na tela
