@@ -4,7 +4,7 @@ Feature: cadastrar filmes
     I WANT TO cadastrar um filme
     SO THAT I possa disponibilizar os filmes para serem comprados
 
-//CENÁRIO 1
+#CENÁRIO 1
 Scenario: funcionário cadastra um novo filme
 GIVEN a filme "Duna" pelo funcionário "Eattron Lhipada", de CPF "12300399456", na página "cadastro de filmes"
 AND sua classificação etária, "16 anos", sua categoria, "ficção científica" e o tempo de duração, "2h35m, 155m"
@@ -15,7 +15,7 @@ WHEN o funcionário tenta finalizar o cadastro
 THEN o filme é cadastrado com sucesso
 AND o filme "Duna" agora pode ser visto na lista de filmes em cartaz
 
-//CENÁRIO 2
+#CENÁRIO 2
 Scenario: funcionário tenta cadastrar um filme já cadastrado
 GIVEN a filme "Duna" pelo funcionário "Eattron Lhipada", de CPF "12300399456", na página "cadastro de filmes"
 AND sua classificação etária, "16 anos", sua categoria, "ficção científica" e o tempo de duração, "2h35m, 155m"
@@ -28,7 +28,7 @@ THEN o cadastro não é efetuado
 AND a mensagem "FILME JÁ CADASTRADO" aparece na tela
 AND o funcionário retorna à tela de "cadastro de filmes"
 
-//CENÁRIO 3
+#CENÁRIO 3
 Scenario: funcionário tenta cadastrar um filme sem todas as informações
 GIVEN a filme "Duna", pelo funcionário "Eattron Lhipada", de CPF "12300399456", na página "cadastro de filmes"
 AND sua classificação etária, "16 anos", sua categoria, "ficção científica" e o tempo de duração, "2h35m, 155m"
@@ -43,7 +43,7 @@ AND suas informações secundárias são preenchidas com um "-", mas a informaç
 AND as opções de "Salvar rascunho" ou "Voltar" aparecem na tela
 AND o funcionário salva o rascunho ou retorna à tela de "cadastro de filmes" para continuar preencendo as informações do filme
 
-//CENÁRIO 4
+#CENÁRIO 4
 Scenario: funcionário tenta cadastrar um filme com conflito
 GIVEN a filme "Duna", pelo funcionário "Eattron Lhipada", de CPF "12300399456", na página "cadastro de filmes"
 AND sua classificação etária, "16 anos", sua categoria, "ficção científica" e o tempo de duração, "2h35m, 155m"
