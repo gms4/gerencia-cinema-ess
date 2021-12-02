@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NomesService } from '../services/nomes.service';
+import { nomesService } from '../services/nomes.service';
 
 @Component({
   selector: 'app-pagina-inicial',
@@ -8,30 +8,41 @@ import { NomesService } from '../services/nomes.service';
 })
 export class PaginaInicialComponent implements OnInit {
 
-  nome: string = "";
-  nomes: string[] = []
+  name: string = "";
+  age: number = 0;
+  email: string = "";
 
-  constructor(private nomesService: NomesService) { }
+  constructor(private nomesService: nomesService) { }
 
   ngOnInit(): void {
+
+    this.name = "";
+    this.age = 0;
+    this.email = "";
   }
 
-  adicionarNome(): void {
-    if (this.nome.length >= 3){
-      this.nomesService.adicionarNome(this.nome);
-      this.listarNomes();
-      this.nome = "";
-      return;
-    }
-    alert("O nome deve ter no mínimo 3 letras");
+  createUser() {
+    this.nomesService.createUser(this.name, this.age, this.email).subscribe({
+      next: (message) => {
+        this.name = "";
+        this.email = "";
+        this.age = 0;
+        alert(message.message);
+      },
+      error: (err) => {
+        alert(err.error);
+      }
+    })
   }
-
-  removerNome(index: number): void {
-    this.nomesService.removerNome(index);
+  
+  getUsers() {
+    this.nomesService.getUsers().subscribe({
+      next: (users) => {
+        console.log(users);
+      },
+      error: () => {
+        alert("Não foi possível obter os usuários do servidor");
+      }
+    })
   }
-
-  listarNomes(){
-    this.nomes = this.nomesService.obterNomes();
-  }
-
 }

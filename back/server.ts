@@ -1,12 +1,18 @@
 import express from 'express';
 import userRouter from './src/routes/user.routes';
 
-const app = express();
-const port = 3000;
+const server = express();
 
-app.use(express.json());
-app.use('/users', userRouter);
+server.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type');
+    next();
+});
 
-app.listen(port, () => {
-    console.log(`Servidor executando na porta ${port}`);
+server.use(express.json());
+server.use('/user', userRouter);
+
+server.listen(3000, () => {
+    console.log(`Servidor executando na porta 3000`);
 });

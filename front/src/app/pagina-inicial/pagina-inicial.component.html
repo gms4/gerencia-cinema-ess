@@ -1,11 +1,15 @@
 <p style ="text-align:center;">Bem vindos ao Cinema do Parque!</p>
-<div style="background-image: url(cinema.jpg);"></div>
-<p> Insira seu nome! </p>
-<input type="text" [(ngModel)]="nome" >
-<button (click)="adicionarNome()"> Inserir nome </button>
+<p> Insira seu nome </p>
+<input type="text" [(ngModel)]="name" >
 
-<ul *ngFor="let nome of this.nomes; index as i">
-    <li>
-        <p> {{ nome }} <button (click)= "removerNome(i)"> Remover </button> </p>
-    </li>
-</ul>
+<p> Insira sua idade </p>
+<input type="number" [(ngModel)]="age" >
+
+<p> Insira seu email </p>
+<input type="text" [(ngModel)]="email" >
+
+<br><br>
+<button (click)="createUser()"> Criar Usuário </button>
+
+<br><br>
+<button (click) ="getUsers()"> Obter Usuários </button>
