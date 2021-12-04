@@ -3,15 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.component';
 import { FormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
+import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
+import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    PaginaInicialComponent
+    TelaCadastroComponent,
+    TelaFilmesComponent,
+    TelaLoginComponent,
+    TelaAreaFuncionarioComponent
   ],
   imports: [
     BrowserModule,

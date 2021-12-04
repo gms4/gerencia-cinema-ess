@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { nomesService } from '../services/nomes.service';
+import { userService } from '../services/user.service';
 
 @Component({
-  selector: 'app-pagina-inicial',
-  templateUrl: './pagina-inicial.component.html',
-  styleUrls: ['./pagina-inicial.component.css']
+  selector: 'app-tela-cadastro',
+  templateUrl: './tela-cadastro.component.html',
+  styleUrls: ['./tela-cadastro.component.css']
 })
-export class PaginaInicialComponent implements OnInit {
+export class TelaCadastroComponent implements OnInit {
 
   name: string = "";
   age: number = 0;
   email: string = "";
 
-  constructor(private nomesService: nomesService) { }
+  constructor(private userService: userService) { }
 
   ngOnInit(): void {
 
@@ -22,7 +22,7 @@ export class PaginaInicialComponent implements OnInit {
   }
 
   createUser() {
-    this.nomesService.createUser(this.name, this.age, this.email).subscribe({
+    this.userService.createUser(this.name, this.age, this.email).subscribe({
       next: (message) => {
         this.name = "";
         this.email = "";
@@ -30,13 +30,13 @@ export class PaginaInicialComponent implements OnInit {
         alert(message.message);
       },
       error: (err) => {
-        alert(err.error);
+        alert(err.error.error);
       }
     })
   }
   
   getUsers() {
-    this.nomesService.getUsers().subscribe({
+    this.userService.getUsers().subscribe({
       next: (users) => {
         console.log(users);
       },
