@@ -9,7 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
-import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component'
+import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component';
+import { NavbarComponent } from './navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-
     TelaCadastroComponent,
     TelaFilmesComponent,
     TelaLoginComponent,
-    TelaAreaFuncionarioComponent
+    TelaAreaFuncionarioComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
