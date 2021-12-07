@@ -1,4 +1,16 @@
-<p>tela-login works!</p>
-
-<br><br>
-<a routerLink="/"> Voltar </a>
+<div class="body">
+    <app-navbar></app-navbar>
+    <div class="paddingLogin">
+        <div class="loginBox">
+            <h1>Cinema do Parque</h1>
+            <div class="inputBox">
+                <input type="text" id="user" placeholder="Escreva seu CPF ou E-mail">
+                <input type="password" id="password" placeholder="Escreva sua senha">
+            </div>
+            <button class="confirmationButton"> Fazer Login </button>
+            <a routerLink="/cadastro">
+                <p>Ainda não é cadastrado?</p>
+            </a>
+        </div>
+    </div>
+</div>
