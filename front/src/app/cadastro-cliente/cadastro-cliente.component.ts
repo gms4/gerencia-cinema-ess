@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { userService } from '../services/user.service';
 
 @Component({
-  selector: 'app-tela-cadastro',
-  templateUrl: './tela-cadastro.component.html',
-  styleUrls: ['./tela-cadastro.component.css']
+  selector: 'app-cadastro-cliente',
+  templateUrl: './cadastro-cliente.component.html',
+  styleUrls: ['./cadastro-cliente.component.css']
 })
-export class TelaCadastroComponent implements OnInit {
+export class CadastroClienteComponent implements OnInit {
 
   name: string = "";
   age: number = 0;
@@ -34,7 +34,7 @@ export class TelaCadastroComponent implements OnInit {
       }
     })
   }
-  
+
   getUsers() {
     this.userService.getUsers().subscribe({
       next: (users) => {

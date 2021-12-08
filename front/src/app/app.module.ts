@@ -8,18 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
-import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component';
-import { NavbarComponent } from './navbar/navbar.component'
+import { NavbarComponent } from './navbar/navbar.component';
+import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    TelaCadastroComponent,
     TelaFilmesComponent,
     TelaLoginComponent,
     TelaAreaFuncionarioComponent,
-    NavbarComponent
+    NavbarComponent,
+    CadastroClienteComponent
   ],
   imports: [
     BrowserModule,
