@@ -12,7 +12,9 @@ import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-
 import { NavbarComponent } from './navbar/navbar.component';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { TelaCadastroFuncionarioComponent } from './tela-cadastro-funcionario/tela-cadastro-funcionario.component';
-import { TelaCadastroClienteComponent } from './tela-cadastro-cliente/tela-cadastro-cliente.component'
+import { TelaCadastroClienteComponent } from './tela-cadastro-cliente/tela-cadastro-cliente.component';
+import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
+import { CadastroFilmeComponent } from './cadastro-filme/cadastro-filme.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TelaCadastroClienteComponent } from './tela-cadastro-cliente/tela-cadas
     NavbarComponent,
     CadastroClienteComponent,
     TelaCadastroFuncionarioComponent,
-    TelaCadastroClienteComponent
+    TelaCadastroClienteComponent,
+    CadastroFuncionarioComponent,
+    CadastroFilmeComponent
   ],
   imports: [
     BrowserModule,

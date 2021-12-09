@@ -1,6 +1,7 @@
 .body{
     background-color: black;
     text-align: center;
+    min-height: 100vh;
 }
 .paddingCadastro{
     padding: 10% 25%;
@@ -32,4 +33,8 @@ h1{
 .confirmationButton{
     width: 100%;
     margin: 2.5% 0% 2% 0%;
+}
+button{
+    width: 33%;
+    display: inline-block;
 }
