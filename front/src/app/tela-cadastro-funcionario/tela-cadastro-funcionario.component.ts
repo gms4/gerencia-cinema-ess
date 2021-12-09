@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelaCadastroFuncionarioComponent implements OnInit {
 
+  cadastroAtual: string = "Cliente";
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  mudarCadastro(tipoCadastro:string): void{
+    this.cadastroAtual = tipoCadastro;
+  }
 }

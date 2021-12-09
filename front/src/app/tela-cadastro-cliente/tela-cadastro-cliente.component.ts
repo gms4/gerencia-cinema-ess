@@ -11,5 +11,8 @@ export class TelaCadastroClienteComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  teste(): number{
+    return 2;
+  }
 
 }
