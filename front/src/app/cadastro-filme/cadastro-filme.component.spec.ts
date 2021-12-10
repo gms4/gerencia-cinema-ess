@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TelaCadastroComponent } from './tela-cadastro.component';
+import { CadastroFilmeComponent } from './cadastro-filme.component';
 
-describe('TelaCadastroComponent', () => {
-  let component: TelaCadastroComponent;
-  let fixture: ComponentFixture<TelaCadastroComponent>;
+describe('CadastroFilmeComponent', () => {
+  let component: CadastroFilmeComponent;
+  let fixture: ComponentFixture<CadastroFilmeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TelaCadastroComponent ]
+      declarations: [ CadastroFilmeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TelaCadastroComponent);
+    fixture = TestBed.createComponent(CadastroFilmeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,12 +11,11 @@ export class userService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${environment.url}/user`);
-  }
+  createUser (name: string, cpf:string, telefone: string, email: string, 
+    endereço: string, senha: string, cargo: string): Observable<any> {
 
-  createUser(name: string, age: number, email: string): Observable<any> {
-    const user = new User(0, name, age, email);
+    const user = new User(name, cpf, telefone, email, endereço, senha, cargo);
     return this.http.post<any>(`${environment.url}/user`, user);
+    
   }
 }

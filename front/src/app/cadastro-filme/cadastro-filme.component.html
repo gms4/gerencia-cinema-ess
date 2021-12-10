@@ -1,0 +1,70 @@
+<h1>Cadastro de Filme</h1>
+<div class="input row">
+    <div class="input col-md-8">
+        <input type="text" name="nome"  placeholder="Digite o nome">
+    </div>
+    <div class="input col-md-4">
+        <select name="classificacaoEtaria" >
+        <option value="" disabled selected hidden>Classificação Etária</option>
+        <option value="Livre">Livre</option>
+        <option value="10+">10+</option>
+        <option value="12+">12+</option>
+        <option value="14+">14+</option>
+        <option value="16+">16+</option>
+        <option value="18+">18+</option>
+        </select>
+    </div>
+    <div class="input col-md-8">
+        <input type="text" name="categorias"  placeholder="Digite os generos">
+    </div>
+    <div class="input col-md-4">
+        <!--Impedir numeros decimais-->
+        <input type="number" name="tempoFilme"  placeholder="Digite a duração(em min)" min="1">
+    </div>
+    <div class="input col-md-12">
+        <input type="text" name="atores"  placeholder="Digite os principais atores">
+    </div>
+    <div class="input col-md-12">
+        <input type="text" name="premios"  placeholder="Digite os premios ganhos">
+    </div>
+    <div class="input col-md-12">
+        <textarea name="" wrap="soft" cols="auto" rows="auto">Digite a sinopse</textarea> 
+    </div>
+</div>
+<!--Usar ngFor no botao para criar novas sessões-->
+<p><b>Sessões:</b></p>
+<div class="input row">
+    <div class="col-md-4">
+        <select name="salaFilme">
+        <option value="" disabled selected hidden>Sala</option>
+        <option value="1">Sala 1</option>
+        <option value="2">Sala 2</option>
+        <option value="3">Sala 3</option>
+        <option value="4">Sala 4</option>
+        <option value="5">Sala 5</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <select name="tipoFilme">
+        <option value="" disabled selected hidden>Tipo</option>
+        <option value="dublado">Dublado</option>
+        <option value="legendado">Legendado</option>
+        <option value="dublado 3D">Dublado 3D</option>
+        <option value="legendado 3D">Legendado e 3D</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <input type="time" placeholder="Horario da Sessão">
+    </div>
+</div>
+<div class="input row">
+    <div class="col-md-12">
+        <button class="addSessao">Adicionar Sessão</button>
+    </div>
+    <div class="col-md-12">
+        <button class="confirmationButton">Arquivar Cadastro</button>
+    </div>
+    <div class="col-md-12">
+        <button class="confirmationButton">Cadastrar Filme</button>
+    </div>
+</div>
