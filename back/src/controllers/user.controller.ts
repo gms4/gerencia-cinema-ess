@@ -23,18 +23,21 @@ export class UserController {
         this.users.push(newUser);
         return "worked";
     }
-/*
-    updateUser(id: number, name: string, age: number): boolean {
-        let userIndex = this.users.findIndex(u => u.id == id);
-        
-        if (userIndex == -1) {//retorna -1 se não encontrar ninguém
-            return false;
+    authenticate(emailOrCpf: string, password: string): User {
+        let user = this.getUserByEmailOrCPF(emailOrCpf);
+
+        if (user) {//usuario encontrado
+            if (user.senha == password)
+                return user;
+            else
+                user = null;
         }
-
-        this.users[userIndex].age = age;
-        this.users[userIndex].name = name;
-        return true;
-
+        return user;
     }
-*/
+
+    getUserByEmailOrCPF(emailOrCpf: string){
+        const user = this.users.find(u => (u.cpf == emailOrCpf || u.email == emailOrCpf));
+        return user;
+    }
+
 }
