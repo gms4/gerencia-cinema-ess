@@ -22,7 +22,7 @@ export class AuthenticationService {
       password: password
     });
   }
-  getUsuarioLogado(): User|null{
+  getLoggedUser(): User|null{
     return this.userLogado;
   }
   setUserLogado(user: User|null){

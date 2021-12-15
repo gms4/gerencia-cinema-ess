@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { User } from './../models/user';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -11,13 +13,16 @@ export class TelaLoginComponent implements OnInit {
 
   emailOrCpf: string;
   password: string;
+  LoggedUser: User | null;
 
-  constructor(private AuthenticationService: AuthenticationService) { 
+  constructor(private AuthenticationService: AuthenticationService, private router: Router) { 
     this.emailOrCpf = "";
     this.password = "";
+    this.LoggedUser = null;
   }
 
   ngOnInit(): void {
+    this.LoggedUser = this.AuthenticationService.getLoggedUser();
   }
 
   login(): void{
@@ -30,8 +35,9 @@ export class TelaLoginComponent implements OnInit {
         next: (user) => {
           this.emailOrCpf = "";
           this.password = "";
+          this.LoggedUser = user;
           this.AuthenticationService.setUserLogado(user);
-          //navegar para a tela de filmes
+          this.router.navigate([""]);//muda tela para a tela de filmes
         },
         error: (err) => {
           alert (err.error.error);
@@ -39,4 +45,9 @@ export class TelaLoginComponent implements OnInit {
       })
     }
   }
+  logout(){
+    this.LoggedUser = null;
+    this.AuthenticationService.setUserLogado(null);
+  }
+  
 }
