@@ -9,40 +9,38 @@ import { userService } from '../services/user.service';
 export class CadastroClienteComponent implements OnInit {
 
   name: string = "";
-  age: number = 0;
+  cpf: string = "";
+  telefone: string = "";
   email: string = "";
+  endereco: string = "";
+  senha: string = "";
 
   constructor(private userService: userService) { }
 
   ngOnInit(): void {
-
-    this.name = "";
-    this.age = 0;
-    this.email = "";
   }
 
   createUser() {
-    this.userService.createUser(this.name, this.age, this.email).subscribe({
-      next: (message) => {
-        this.name = "";
-        this.email = "";
-        this.age = 0;
-        alert(message.message);
-      },
-      error: (err) => {
-        alert(err.error.error);
-      }
-    })
+    if (this.name == "" || this.cpf == "" || this.telefone == "" || 
+      this.email == "" || this.endereco == "" || this.senha == "") {
+        alert("Por favor, preencha todos os campos antes de efetuar o cadastro");
+    }else{
+      this.userService.createUser(this.name, this.cpf, this.telefone, this.email, 
+        this.endereco, this.senha, "cliente").subscribe({
+        next: (message) => {
+          this.name = "";
+          this.cpf = "";
+          this.telefone = "";
+          this.email = "";
+          this.endereco = "";
+          this.senha = "";
+          alert(message.message);
+        },
+        error: (err) => {
+          alert(err.error.error);
+        }
+      })
+    }
   }
 
-  getUsers() {
-    this.userService.getUsers().subscribe({
-      next: (users) => {
-        console.log(users);
-      },
-      error: () => {
-        alert("Não foi possível obter os usuários do servidor");
-      }
-    })
-  }
 }
