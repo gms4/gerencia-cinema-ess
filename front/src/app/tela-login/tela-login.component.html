@@ -1,16 +1,38 @@
 <div class="body">
     <app-navbar></app-navbar>
     <div class="paddingLogin">
-        <div class="loginBox">
+        <div *ngIf = "LoggedUser == null" class="loginBox">
             <h1>Cinema do Parque</h1>
             <div class="inputBox">
-                <input type="text" id="user" placeholder="Escreva seu CPF ou E-mail">
-                <input type="password" id="password" placeholder="Escreva sua senha">
+                <input type="text" [(ngModel)]="emailOrCpf" placeholder="Escreva seu CPF ou E-mail">
+                <input type="password" [(ngModel)]="password" placeholder="Escreva sua senha">
             </div>
-            <button class="confirmationButton"> Fazer Login </button>
+            <button class="confirmationButton" (click)="login()"> Fazer Login </button>
             <a routerLink="/cadastro">
                 <p>Ainda não é cadastrado?</p>
             </a>
+        </div>
+        <div *ngIf = "LoggedUser != null" class="logoutBox">
+            <p class="logoutText"> 
+                <span class="marcador">Nome:</span>  
+                {{LoggedUser.name}}
+            </p>
+            <p class="logoutText"> 
+                <span class="marcador">CPF:</span> 
+                {{LoggedUser.cpf}}</p>
+            <p class="logoutText">
+                <span class="marcador">Telefone:</span> 
+                {{LoggedUser.telefone}}</p>
+            <p class="logoutText">
+                <span class="marcador">Email:</span> 
+                {{LoggedUser.email}}</p>
+            <p class="logoutText">
+                <span class="marcador">Endereço:</span> 
+                {{LoggedUser.endereco}}</p>
+            <p class="logoutText">
+                <span class="marcador">Função:</span> 
+                {{LoggedUser.cargo}}</p>
+            <button class="confirmationButton" (click)="logout()"> Fazer Logout </button>
         </div>
     </div>
 </div>

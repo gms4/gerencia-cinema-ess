@@ -38,19 +38,20 @@ userRouter.route("/")
     .delete((req: Request, res: Response) => {
         return res.json({ Warning: "Método DELETE não suportado para a rota /users"});
     });
-/*
-userRouter.route("/:id")
-    .get((req: Request, res: Response) => {
 
-        let id = parseInt(req.params.id);
-        let user = userController.getUsersById(id);
-        if (!user) { //not found
-            return res.status(404).json({ error: "Usuário não encontrado." });
+userRouter.route("/auth/login")
+    .post((req: Request, res: Response) => {
+
+        let emailOrCpf = req.body.emailOrCpf;
+        let password = req.body.password;
+        let authenticatedUser = userController.authenticate(emailOrCpf, password);
+
+        if (!authenticatedUser) { //usuario nao cadastrado no sistema
+            return res.status(404).json({ error: "Não foi possível encontrar essa combinação de CPF (ou email) e senha"});
         }
-
-        return res.json({ user });
-    })
-    
+        return res.json(authenticatedUser);
+    });
+    /*
     .put((req: Request, res: Response) => {
         let id = parseInt(req.params.id);
         let name = req.body.name;
