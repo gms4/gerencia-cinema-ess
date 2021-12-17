@@ -3,6 +3,7 @@ import { Filme } from 'src/app/models/filme';
 import { FilmesService } from '../services/filmes.service';
 import { Component, OnInit } from '@angular/core';
 import { sessaoFilme } from '../models/sessaoFilme';
+import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-tela-filmes',
@@ -12,6 +13,7 @@ import { sessaoFilme } from '../models/sessaoFilme';
 export class TelaFilmesComponent implements OnInit {
 
   filmes: Filme[] = [];
+  seta = faChevronCircleLeft;
   filmeSessao: Filme = new Filme("", "", "", 0, "", "", "", false, "", []);
   telaAtual: boolean = true;
 
@@ -67,5 +69,7 @@ export class TelaFilmesComponent implements OnInit {
     this.telaAtual = !this.telaAtual;
     this.filmeSessao = filme;
   }
-
+  toFilme(){
+    this.telaAtual = !this.telaAtual;
+  }
 }

@@ -11,6 +11,11 @@
     padding: 5% 15%;
     margin: 0px;
 }
+.bloco-sessao{
+    padding: 0% 15% 5%;
+    margin: 0px;
+}
+
 .text-filme{
     text-align: left;
     color: #e0e0e0;
@@ -43,4 +48,15 @@
 }
 .sessao{
     margin: 0.15rem 0 0 0;
+}
+.leftArrow{
+    color: gray;
+    text-align: left;
+    font-size: 2rem;
+    padding: 2% 0 0 2rem;
+}
+
+.leftArrowIcon:hover{
+    color: white;
+    cursor: pointer;
 }

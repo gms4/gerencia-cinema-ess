@@ -33,7 +33,10 @@
         </div>
     </div>
     <div *ngIf="!telaAtual">
-        <div class="bloco-filme row">
+        <div class="leftArrow">
+            <fa-icon [icon]="seta" (click)="toFilme()" class="leftArrowIcon"></fa-icon>
+        </div>
+        <div class="bloco-sessao row">
             <div class="img-filme col-md-4">
                 <img class="cartaz" src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg" alt="">
             </div>
