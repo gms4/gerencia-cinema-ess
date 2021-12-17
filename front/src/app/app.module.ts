@@ -10,15 +10,12 @@ import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component';
 import { NavbarComponent } from './navbar/navbar.component';
-<<<<<<< HEAD
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { TelaCadastroFuncionarioComponent } from './tela-cadastro-funcionario/tela-cadastro-funcionario.component';
 import { TelaCadastroClienteComponent } from './tela-cadastro-cliente/tela-cadastro-cliente.component';
 import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
 import { CadastroFilmeComponent } from './cadastro-filme/cadastro-filme.component'
-=======
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
->>>>>>> filmes
 
 @NgModule({
   declarations: [
