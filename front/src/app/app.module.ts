@@ -10,7 +10,8 @@ import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { TelaCadastroComponent } from './tela-cadastro/tela-cadastro.component';
 import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component';
-import { NavbarComponent } from './navbar/navbar.component'
+import { NavbarComponent } from './navbar/navbar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
