@@ -12,6 +12,8 @@ import { sessaoFilme } from '../models/sessaoFilme';
 export class TelaFilmesComponent implements OnInit {
 
   filmes: Filme[] = [];
+  filmeSessao: Filme = new Filme("", "", "", 0, "", "", "", false, "", []);
+  telaAtual: boolean = true;
 
   constructor(private FilmesService: FilmesService) { }
 
@@ -60,4 +62,10 @@ export class TelaFilmesComponent implements OnInit {
     }
     return horarios;
   }
+
+  toSession(filme: Filme){
+    this.telaAtual = !this.telaAtual;
+    this.filmeSessao = filme;
+  }
+
 }

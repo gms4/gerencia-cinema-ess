@@ -9,6 +9,7 @@
 }
 .bloco-filme{
     padding: 5% 15%;
+    margin: 0px;
 }
 .text-filme{
     text-align: left;
@@ -29,4 +30,17 @@
     height: 20%;
     font-weight: 800;
     margin: 5% 30%;
+}
+
+.buttonSessao{
+    width: 100%;
+    height: 100%;
+    font-weight: 800;
+    border-radius: 0.25rem;
+}
+.sessionBox{
+    margin-top: 0.6rem;
+}
+.sessao{
+    margin: 0.15rem 0 0 0;
 }
