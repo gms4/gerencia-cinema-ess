@@ -1,70 +1,60 @@
 <div class="body">
     <app-navbar></app-navbar>
-    <div id="carouselFilmes" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="bloco-filme row">
-                    <div class="img-filme col-md-4">
-                        <img class="cartaz" src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg" alt="">
+    <div *ngIf="telaAtual">
+        <div id="carouselFilmes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <ng-container *ngFor="let filme of filmes; index as i">
+                    <div class="carousel-item" [class.active]="i==0" *ngIf="!filme.arquivado">
+                        <div class="bloco-filme row">
+                            <div class="img-filme col-md-4">
+                                <img class="cartaz" src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg" alt="">
+                            </div>
+                            <div class="text-filme col-md-8">
+                                <h1 class="titulo">{{filme.nome}}</h1>
+                                <p class="categoria">Genero: {{filme.categorias}}</p>
+                                <p class="categoria">Classificação Etária: {{filme.etaria}}</p>
+                                <p class="categoria">Tempo de Duração: {{duracaoMinHours(filme.duracao)}}</p>
+                                <p class="categoria">Sinopse: {{filme.sinopse}}</p>
+                                <p class="categoria">Atores Principais: {{filme.atores}}</p>
+                                <p class="categoria">{{filme.tipo}}</p>
+                                <p class="categoria">Horarios: {{extractHorarios(filme.sessoes)}}</p>
+                                <button class="ver-sessoes" (click)="toSession(filme)">Ver Sessões</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-filme col-md-8">
-                        <h1 class="titulo">Titulo</h1>
-                        <p class="categoria">Genero: </p>
-                        <p class="categoria">Classificação Etária: </p>
-                        <p class="categoria">Tempo de Duração: </p>
-                        <p class="categoria">Sinopse: </p>
-                        <p class="categoria">Atores Principais: </p>
-                        <p class="categoria">Dublado e/ou Legendado: </p>
-                        <p class="categoria">Sala Comum e/ou 3D</p>
-                        <p class="categoria">Horarios</p>
-                        <button class="ver-sessoes">Ver Sessões</button>
-                    </div>
-                </div>
+                </ng-container>
             </div>
-            <div class="carousel-item">
-                <div class="bloco-filme row">
-                    <div class="img-filme col-md-4">
-                        <img class="cartaz" src="../../assets/cartaz-poster-vingadores-4-ultimato-filme-marvel-avengers-colecionador.jpg" alt="">
-                    </div>
-                    <div class="text-filme col-md-8">
-                        <h1 class="titulo">Titulo</h1>
-                        <p class="categoria">Genero: </p>
-                        <p class="categoria">Classificação Etária: </p>
-                        <p class="categoria">Tempo de Duração: </p>
-                        <p class="categoria">Sinopse: </p>
-                        <p class="categoria">Atores Principais: </p>
-                        <p class="categoria">Dublado e/ou Legendado: </p>
-                        <p class="categoria">Sala Comum e/ou 3D</p>
-                        <p class="categoria">Horarios</p>
-                        <button class="ver-sessoes">Ver Sessões</button>
-                    </div>
-                </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselFilmes" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselFilmes" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="!telaAtual">
+        <div class="leftArrow">
+            <fa-icon [icon]="seta" (click)="toFilme()" class="leftArrowIcon"></fa-icon>
+        </div>
+        <div class="bloco-sessao row">
+            <div class="img-filme col-md-4">
+                <img class="cartaz" src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg" alt="">
             </div>
-            <div class="carousel-item">
-                <div class="bloco-filme row">
-                    <div class="img-filme col-md-4">
-                        <img class="cartaz" src="../../assets/cinema.jpg" alt="">
-                    </div>
-                    <div class="text-filme col-md-8">
-                        <h1 class="titulo">Titulo</h1>
-                        <p class="categoria">Genero: </p>
-                        <p class="categoria">Classificação Etária: </p>
-                        <p class="categoria">Tempo de Duração: </p>
-                        <p class="categoria">Sinopse: </p>
-                        <p class="categoria">Atores Principais: </p>
-                        <p class="categoria">Dublado e/ou Legendado: </p>
-                        <p class="categoria">Sala Comum e/ou 3D</p>
-                        <p class="categoria">Horarios: </p>
-                        <button class="ver-sessoes">Ver Sessões</button>
+            <div class="text-filme col-md-8">
+                <h1 class="titulo">{{filmeSessao.nome}}</h1>
+                <p class="categoria">Genero: {{filmeSessao.categorias}}</p>
+                <p class="categoria">Classificação Etária: {{filmeSessao.etaria}}</p>
+                <p class="categoria">Tempo de Duração: {{duracaoMinHours(filmeSessao.duracao)}}</p>
+                <div class="row sessionBox">
+                    <div class="col-md-4 sessao" *ngFor="let sessao of filmeSessao.sessoes">
+                        <button class="buttonSessao">
+                            {{sessao.sala}} <br> 
+                                {{sessao.hora}} <br> 
+                                Analisar valor da sala
+                        </button>                        
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFilmes" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselFilmes" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
     </div>
 </div>
