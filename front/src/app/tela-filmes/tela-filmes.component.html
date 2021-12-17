@@ -12,11 +12,11 @@
                             <h1 class="titulo">{{filme.nome}}</h1>
                             <p class="categoria">Genero: {{filme.categorias}}</p>
                             <p class="categoria">Classificação Etária: {{filme.etaria}}</p>
-                            <p class="categoria">Tempo de Duração: {{filme.duracao}}</p>
+                            <p class="categoria">Tempo de Duração: {{duracaoMinHours(filme.duracao)}}</p>
                             <p class="categoria">Sinopse: {{filme.sinopse}}</p>
                             <p class="categoria">Atores Principais: {{filme.atores}}</p>
                             <p class="categoria">{{filme.tipo}}</p>
-                            <p class="categoria">Horarios: {{filme.sessoes}}</p>
+                            <p class="categoria">Horarios: {{extractHorarios(filme.sessoes)}}</p>
                             <button class="ver-sessoes">Ver Sessões</button>
                         </div>
                     </div>
