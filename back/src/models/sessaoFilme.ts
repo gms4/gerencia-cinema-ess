@@ -4,9 +4,11 @@ export class sessaoFilme{
 
     sala: string;
     hora: string;
+    lotacao: string;
 
-    constructor (sala: string, hora: string){
+    constructor (sala: string, hora: string, lotacao: string){
         this.sala = sala;
         this.hora = hora;
+        this.lotacao = lotacao;
     }
 }

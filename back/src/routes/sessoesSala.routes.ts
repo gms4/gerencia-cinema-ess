@@ -39,7 +39,8 @@ sessoesSalaRouter.route("/:numeroSala/:horario")
     .put((req: Request, res: Response) => {
         /*
             Deve modificar a qtd de ingressos e o array de cadeiras da sessaoSala
-            (req.params.numeroSala e req.params.horario)
+            (req.params.numeroSala e req.params.horario), quando a lotaçao mudar para
+            75% ou 100%, deve alterar o valor na sessaoFilme do filme
         */
         return res.json({ Warning: "Essa rota ainda sera desenvolvida"});
     });

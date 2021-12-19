@@ -47,10 +47,15 @@
                 <p class="categoria">Tempo de Duração: {{duracaoMinHours(filmeSessao.duracao)}}</p>
                 <div class="row sessionBox">
                     <div class="col-md-4 sessao" *ngFor="let sessao of filmeSessao.sessoes">
-                        <button class="buttonSessao" (click) = "toTelaIngressos(filmeSessao, sessao)">
+                        <button *ngIf="sessao.lotacao != 'Lotada'" class="buttonSessao" (click) = "toTelaIngressos(filmeSessao, sessao)">
                             {{sessao.sala}} <br> 
                                 {{sessao.hora}} <br> 
-                                Analisar valor da sala
+                                {{sessao.lotacao}}
+                        </button>
+                        <button *ngIf="sessao.lotacao == 'Lotada'" class="buttonSessao">
+                            {{sessao.sala}} <br> 
+                                {{sessao.hora}} <br> 
+                                {{sessao.lotacao}}
                         </button>                        
                     </div>
                 </div>
