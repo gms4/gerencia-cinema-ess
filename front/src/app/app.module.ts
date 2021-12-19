@@ -15,7 +15,8 @@ import { TelaCadastroFuncionarioComponent } from './tela-cadastro-funcionario/te
 import { TelaCadastroClienteComponent } from './tela-cadastro-cliente/tela-cadastro-cliente.component';
 import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-funcionario.component';
 import { CadastroFilmeComponent } from './cadastro-filme/cadastro-filme.component'
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TelaIngressosComponent } from './tela-ingressos/tela-ingressos.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     TelaCadastroFuncionarioComponent,
     TelaCadastroClienteComponent,
     CadastroFuncionarioComponent,
-    CadastroFilmeComponent
+    CadastroFilmeComponent,
+    TelaIngressosComponent
   ],
   imports: [
     BrowserModule,

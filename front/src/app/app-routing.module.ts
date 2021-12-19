@@ -5,6 +5,7 @@ import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { TelaCadastroClienteComponent } from './tela-cadastro-cliente/tela-cadastro-cliente.component';
 import { TelaCadastroFuncionarioComponent } from './tela-cadastro-funcionario/tela-cadastro-funcionario.component';
+import { TelaIngressosComponent } from './tela-ingressos/tela-ingressos.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     component: TelaAreaFuncionarioComponent,
     path: 'areaFuncionario'
+  },
+  {
+    component: TelaIngressosComponent,
+    path: 'telaIngressos'
   }
 ];
 
