@@ -1,4 +1,6 @@
+import { SharedDataService } from './../services/shared-data.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-tela-ingressos',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelaIngressosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private SharedDataService: SharedDataService) { }
 
   ngOnInit(): void {
   }

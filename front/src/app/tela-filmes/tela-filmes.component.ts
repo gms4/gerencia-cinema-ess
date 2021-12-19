@@ -1,9 +1,11 @@
+import { SharedDataService } from './../services/shared-data.service';
 import { TelaAreaFuncionarioComponent } from './../tela-area-funcionario/tela-area-funcionario.component';
 import { Filme } from 'src/app/models/filme';
 import { FilmesService } from '../services/filmes.service';
 import { Component, OnInit } from '@angular/core';
 import { sessaoFilme } from '../models/sessaoFilme';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tela-filmes',
@@ -17,7 +19,7 @@ export class TelaFilmesComponent implements OnInit {
   filmeSessao: Filme = new Filme("", "", "", 0, "", "", "", false, "", []);
   telaAtual: boolean = true;
 
-  constructor(private FilmesService: FilmesService) { }
+  constructor(private FilmesService: FilmesService, private SharedDataService: SharedDataService, private router: Router) { }
 
   ngOnInit(): void {
     this.getFilmes();
@@ -69,7 +71,14 @@ export class TelaFilmesComponent implements OnInit {
     this.telaAtual = !this.telaAtual;
     this.filmeSessao = filme;
   }
+
   toFilme(){
     this.telaAtual = !this.telaAtual;
+  }
+
+  toTelaIngressos(filmeSelecionado: Filme, sessaoFilmeSelecionada: sessaoFilme){
+    this.SharedDataService.setFilmeSelecionado(filmeSelecionado);
+    this.SharedDataService.setsessaoFilmeSelecionada(sessaoFilmeSelecionada);
+    this.router.navigate(["/telaIngressos"]); 
   }
 }
