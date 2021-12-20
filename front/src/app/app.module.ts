@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TelaFilmesComponent } from './tela-filmes/tela-filmes.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
-import { TelaAreaFuncionarioComponent } from './tela-area-funcionario/tela-area-funcionario.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { TelaCadastroFuncionarioComponent } from './tela-cadastro-funcionario/tela-cadastro-funcionario.component';
@@ -23,7 +22,6 @@ import { TelaIngressosComponent } from './tela-ingressos/tela-ingressos.componen
     AppComponent,
     TelaFilmesComponent,
     TelaLoginComponent,
-    TelaAreaFuncionarioComponent,
     NavbarComponent,
     CadastroClienteComponent,
     TelaCadastroFuncionarioComponent,

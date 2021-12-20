@@ -1,5 +1,4 @@
 import { SharedDataService } from './../services/shared-data.service';
-import { TelaAreaFuncionarioComponent } from './../tela-area-funcionario/tela-area-funcionario.component';
 import { Filme } from 'src/app/models/filme';
 import { FilmesService } from '../services/filmes.service';
 import { Component, OnInit } from '@angular/core';
