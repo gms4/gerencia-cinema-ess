@@ -1,10 +1,4 @@
 /*class tags*/
-.body{
-    background-color: black;
-    min-height: 100vh;
-    text-align: center;
-}
-
 .buttonNavbarCenter{
     border: solid black;
     border-width: 0px 1px 0px 1px;
@@ -16,9 +10,7 @@
 }
 
 .cadastroBox{
-    background-color: darkgrey;
     border-radius: 0 0 5px 5px;
-    padding: 5% 5%;
 }
 
 .cadastroNavbar{
@@ -28,12 +20,5 @@
     border-width: 0px 0px 1px 0px;
     color: #eeeeee;
     cursor: pointer;
-}
-
-.paddingCadastro{
-    padding: 10% 25%;
-}
-
-.row{
     margin: 0px;
 }

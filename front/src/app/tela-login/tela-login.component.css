@@ -1,30 +1,9 @@
 /*html tags*/
-h1{
-    font-size: 2rem;
-    margin: 0% 0% 7.5% 0%;
-    font-weight: 700;
-}
-
 input{
-    border-radius: 3px;
-    border-width: 1px;
     margin: 0% 0% 2.5% 0%;
-    padding: 4px 4px;
-    width: 100%;
 }
 
 /*class tags*/
-.body{
-    background-color: black;
-    min-height: 100vh;
-    text-align: center;
-}
-
-.confirmationButton{
-    margin: 2.5% 0% 2% 0%;
-    width: 100%;
-}
-
 .loginBox{
     background-color: darkgrey;
     border-radius: 5px;

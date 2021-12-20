@@ -7,7 +7,7 @@
                 <fa-icon [icon]="errorTriangle" class="errorTriangleIcon"></fa-icon>
                 <fa-icon [icon]="errorTriangle" class="errorTriangleIcon"></fa-icon>
             </div>
-            <h1 class="titulo">Não há nenhum filme em cartaz no momento</h1>
+            <h1 class="errorZeroFilmes">Não há nenhum filme em cartaz no momento</h1>
             <div class="errorTriangleDiv">
                 <fa-icon [icon]="errorTriangle" class="errorTriangleIcon"></fa-icon>
                 <fa-icon [icon]="errorTriangle" class="errorTriangleIcon"></fa-icon>
@@ -26,7 +26,7 @@
                                     <img class="cartaz" src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg">
                                 </div>
                                 <div class="textFilme col-md-8">
-                                    <h1 class="titulo">{{filme.nome}}</h1>
+                                    <h1>{{filme.nome}}</h1>
                                     <p class="categoria">Genero: {{filme.categorias}}</p>
                                     <p class="categoria">Classificação Etária: {{filme.etaria}}</p>
                                     <p class="categoria">Tempo de Duração: {{duracaoMinHours(filme.duracao)}}</p>
@@ -34,7 +34,7 @@
                                     <p class="categoria">Atores Principais: {{filme.atores}}</p>
                                     <p class="categoria">{{filme.tipo}}</p>
                                     <p class="categoria">Horarios: {{extractHorarios(filme.sessoes)}}</p>
-                                    <button class="verSessoes" (click)="toSession(filme)">Ver Sessões</button>
+                                    <button class="verSessoesButton" (click)="toSession(filme)">Ver Sessões</button>
                                 </div>
                             </div>
                         </div>
@@ -57,13 +57,13 @@
                     <img class="cartaz" src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg">
                 </div>
                 <div class="textFilme col-md-8">
-                    <h1 class="titulo">{{filmeSessao.nome}}</h1>
+                    <h1>{{filmeSessao.nome}}</h1>
                     <p class="categoria">Genero: {{filmeSessao.categorias}}</p>
                     <p class="categoria">Classificação Etária: {{filmeSessao.etaria}}</p>
                     <p class="categoria">Tempo de Duração: {{duracaoMinHours(filmeSessao.duracao)}}</p>
                     <div class="row">
                         <div class="col-md-4 sessao" *ngFor="let sessao of filmeSessao.sessoes">
-                            <button class="buttonSessao" (click) = "sessao.lotacao != 'Lotada' ? toTelaIngressos(filmeSessao, sessao) : null">
+                            <button class="sessaoButton" (click) = "sessao.lotacao != 'Lotada' ? toTelaIngressos(filmeSessao, sessao) : null">
                                 {{sessao.sala}} <br> 
                                     {{sessao.hora}} <br> 
                                     {{sessao.lotacao}}

@@ -1,10 +1,12 @@
 /*class tags*/
-.body{
-    background-color: black;
-    min-height: 100vh;
-    text-align: center;
+h1{
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    text-align: left;
 }
 
+/*class tags*/
 .blocoFilme{
     padding: 5% 15%;
 }
@@ -14,7 +16,7 @@
     margin: 0px;
 }
 
-.buttonSessao{
+.sessaoButton{
     border-radius: 0.25rem;
     font-weight: 800;    
     height: 100%;
@@ -41,6 +43,10 @@
     margin: 0 1rem;
 }
 
+.errorZeroFilmes{
+    text-align: center;
+}
+
 .leftArrow{
     color: gray;
     font-size: 2rem;
@@ -59,21 +65,16 @@
 }
 
 .semFilmes{
-    padding: 12% 35%;
-    font-weight: 700;
     color: #eeeeee;
+    font-weight: 700;
+    padding: 12% 35%;
 }
 
 .sessao{
     margin-top: 0.5rem;
 }
 
-.titulo{
-    font-size: 2.5rem;
-    font-weight: 800;
-}
-
-.verSessoes{
+.verSessoesButton{
     width: 40%;
     height: 20%;
     font-weight: 800;

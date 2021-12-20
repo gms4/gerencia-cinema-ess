@@ -3,3 +3,42 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+/*html tags*/
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0% 0% 7.5% 0%;
+    text-align: center; 
+}
+
+input, select{
+    border-radius: 3px;
+    border-width: 1px;
+    padding: 4px 4px;
+    width: 100%;
+}
+
+/*class tags*/
+.body{
+    background-color: black;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.cadastroBox{
+    background-color: darkgrey;
+    padding: 5% 5%;
+}
+
+.confirmationButton{
+    margin: 2.5% 0% 2% 0%;
+    width: 100%;
+}
+
+.input{
+    margin: 0% 0% 1% 0%;
+}
+
+.paddingCadastro{
+    padding: 10% 25%;
+}
