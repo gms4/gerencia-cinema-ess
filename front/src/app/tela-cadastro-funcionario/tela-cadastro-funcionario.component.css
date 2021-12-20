@@ -1,40 +1,39 @@
+/*class tags*/
 .body{
     background-color: black;
-    text-align: center;
     min-height: 100vh;
+    text-align: center;
 }
+
+.buttonNavbarCenter{
+    border: solid black;
+    border-width: 0px 1px 0px 1px;
+}
+
+.buttonNavbar:hover, .buttonNavbarCenter:hover{
+    background-color: #555555;
+    border-radius: 2px;
+}
+
+.cadastroBox{
+    background-color: darkgrey;
+    border-radius: 0 0 5px 5px;
+    padding: 5% 5%;
+}
+
+.cadastroNavbar{
+    background-color: #777777;
+    border: solid black;
+    border-radius: 5px 5px 0 0;
+    border-width: 0px 0px 1px 0px;
+    color: #eeeeee;
+    cursor: pointer;
+}
+
 .paddingCadastro{
     padding: 10% 25%;
 }
 
-.CadastroBox{
-    background-color: darkgrey;
-    padding: 5% 5%;
-    border-radius: 5px;
-}
-input{
-    display: block;
-    width: 100%;
-    border-radius: 3px;
-    border-width: 1px;
-    padding: 4px 4px;    
-}
-.input.row{
-    margin: 0% 0% 1% 0%;
-}
-
-h1{
-    text-align: center;
-    font-size: 2rem;
-    margin: 0% 0% 7.5% 0%;
-    font-weight: 700;
-}
-
-.confirmationButton{
-    width: 100%;
-    margin: 2.5% 0% 2% 0%;
-}
-button{
-    width: 33%;
-    display: inline-block;
+.row{
+    margin: 0px;
 }
