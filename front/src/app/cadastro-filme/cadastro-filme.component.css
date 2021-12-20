@@ -1,17 +1,17 @@
 /*html tags*/
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0% 0% 7.5% 0%;
+    text-align: center; 
+}
+
 input, select {
     border-radius: 3px;
     border-width: 1px;
     height: 100%;
     padding: 4px 4px; 
     width: 100%;   
-}
-
-h1{
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0% 0% 7.5% 0%;
-    text-align: center; 
 }
 
 textarea{
@@ -25,11 +25,11 @@ textarea{
     margin-right: 0;
 }
 
-.input{
-    margin: 0% 0% 1% 0%;
+.confirmationButton{
+    margin: 2.5% 0% 0% 0%;
+    width: 100%;
 }
 
-.confirmationButton{
-    width: 100%;
-    margin: 2.5% 0% 0% 0%;
+.input{
+    margin: 0% 0% 1% 0%;
 }
