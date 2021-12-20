@@ -1,64 +1,61 @@
-.img-filme .cartaz{
-    width: 100%;
-    height: 65vh;
-}
+/*class tags*/
 .body{
     background-color: black;
-    text-align: center;
     min-height: 100vh;
+    text-align: center;
 }
-.bloco-filme{
+
+.blocoFilme{
     padding: 5% 15%;
-    margin: 0px;
 }
-.bloco-sessao{
+
+.blocoSessao{
     padding: 0% 15% 5%;
     margin: 0px;
 }
 
-.text-filme{
-    text-align: left;
-    color: #e0e0e0;
+.buttonSessao{
+    border-radius: 0.25rem;
+    font-weight: 800;    
+    height: 100%;
+    width: 100%;
 }
-.titulo{
-    font-size: 2.5rem;
-    font-weight: 800;
+
+.cartaz{
+    width: 100%;
+    height: 65vh;
 }
+
 .categoria{
     font-size: 1rem;
     font-weight: 600;
     margin: 0;
 }
 
-.ver-sessoes{
-    width: 40%;
-    height: 20%;
-    font-weight: 800;
-    margin: 5% 30%;
+.errorTriangleDiv{
+    font-size: 2rem;
+    padding: 0.5rem 0;
 }
 
-.buttonSessao{
-    width: 100%;
-    height: 100%;
-    font-weight: 800;
-    border-radius: 0.25rem;
+.errorTriangleIcon{
+    margin: 0 1rem;
 }
-.sessionBox{
-    margin-top: 0.6rem;
-}
-.sessao{
-    margin: 0.15rem 0 0 0;
-}
+
 .leftArrow{
     color: gray;
-    text-align: left;
     font-size: 2rem;
     padding: 2% 0 0 2rem;
+    text-align: left;
 }
 
 .leftArrowIcon:hover{
     color: white;
     cursor: pointer;
+}
+
+.textFilme{
+    text-align: left;
+    color: #e0e0e0;
 }
 
 .semFilmes{
@@ -67,10 +64,18 @@
     color: #eeeeee;
 }
 
-.errorTriangleDiv{
-    padding: 0.5rem 0;
-
+.sessao{
+    margin-top: 0.5rem;
 }
-.errorTriangleIcon{
-    margin: 0 1rem;
+
+.titulo{
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.verSessoes{
+    width: 40%;
+    height: 20%;
+    font-weight: 800;
+    margin: 5% 30%;
 }
