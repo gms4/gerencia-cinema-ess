@@ -60,3 +60,17 @@
     color: white;
     cursor: pointer;
 }
+
+.semFilmes{
+    padding: 12% 35%;
+    font-weight: 700;
+    color: #eeeeee;
+}
+
+.errorTriangleDiv{
+    padding: 0.5rem 0;
+
+}
+.errorTriangleIcon{
+    margin: 0 1rem;
+}

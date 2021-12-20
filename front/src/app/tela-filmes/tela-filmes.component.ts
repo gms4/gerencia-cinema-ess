@@ -4,7 +4,7 @@ import { Filme } from 'src/app/models/filme';
 import { FilmesService } from '../services/filmes.service';
 import { Component, OnInit } from '@angular/core';
 import { sessaoFilme } from '../models/sessaoFilme';
-import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleLeft, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,6 +16,7 @@ export class TelaFilmesComponent implements OnInit {
 
   filmes: Filme[] = [];
   seta = faChevronCircleLeft;
+  errorTriangle = faExclamationTriangle;
   filmeSessao: Filme = new Filme("", "", "", 0, "", "", "", false, "", []);
   telaAtual: boolean = true;
 
