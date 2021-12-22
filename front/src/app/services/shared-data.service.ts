@@ -23,11 +23,11 @@ export class SharedDataService {
     return this.sessaoFilmeSelecionada;
   }
   
-  setFilmeSelecionado(filmeSelecionado: Filme){
+  setFilmeSelecionado(filmeSelecionado: Filme | null){
     this.filmeSelecionado = filmeSelecionado;
   }
 
-  setsessaoFilmeSelecionada(sessaoFilmeSelecionada: sessaoFilme){
+  setsessaoFilmeSelecionada(sessaoFilmeSelecionada: sessaoFilme | null){
     this.sessaoFilmeSelecionada = sessaoFilmeSelecionada;
   }
 

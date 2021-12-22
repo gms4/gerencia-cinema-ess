@@ -1,1 +1,87 @@
-<p>tela-ingressos works!</p>
+<div class="body">
+    <app-navbar></app-navbar>
+    <div class="resumoSessaoFilme row">
+        <div class="leftArrow col-md-1">
+            <fa-icon [icon]="seta" (click)="toTelaFilmes()" class="leftArrowIcon"></fa-icon>
+        </div>
+        <div class="mapaSessao col-md-8">
+            <div class="tela">Tela</div>
+            <div class="" *ngFor = "let fileira of sessaoSala.cadeirasSessao; index as i">
+                <ng-container *ngFor = "let cadeira of fileira; index as j">
+                    <div class="cadeiraDiv" [ngClass]=
+                    "{'cadeiraOcupada': sessaoSala.cadeirasSessao[i][j] == 'false',
+                    'cadeiraSelecionada': sessaoSala.cadeirasSessao[i][j] == 'selecionada',
+                    'cadeiraDesocupada': sessaoSala.cadeirasSessao[i][j] == 'true'}">
+                        <fa-icon [icon]="cadeiraIcon" (click) = "clickCadeira(i,j)"></fa-icon>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="selecaoIngressos col-md-2">
+            <h2>Ingressos</h2>
+            <p class="resumoTexto categoria">Cadeiras Selecionadas: {{qtdCadeirasSelecionadas}}</p>
+            <p class="resumoTexto categoria">Ingressos Selecionados: {{ingressoInteira+ingressoMeia}}</p>
+            <div class="ingresso row">
+                <div class="col-md-4">
+                    <fa-icon [icon]="ticket" class="ticketIcon"></fa-icon>
+                </div>
+                <div class="divisaoIngresso col-md-4">
+                    <p class="nomeIngresso">Inteira</p>
+                </div>
+                <div class="divisaoIngresso col-md-4">
+                    <input class="inputIngressos" type="number" min="0" [(ngModel)]="ingressoInteira" placeholder="0">
+                </div>
+            </div>
+            <div class="ingresso row">
+                <div class="col-md-4">
+                    <fa-icon [icon]="ticket" class="ticketIcon"></fa-icon>
+                </div>
+                <div class="divisaoIngresso col-md-4">
+                    <p class="nomeIngresso">Meia</p>
+                </div>
+                <div class="divisaoIngresso col-md-4">
+                    <input class="inputIngressos" type="number" min="0" [(ngModel)]="ingressoMeia" placeholder="0">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="resumoGeral resumoTexto col-md-8">
+            <div class="row">
+                <div class="resumoImg col-md-2">
+                    <img src="../../assets/poster-os-vingadores-2-a-era-de-ultron-o-95f5a316.jpg" alt="">
+                </div>
+                <div class="divisaoResumo col-md-5">
+                    <h1 class="titulo">{{(filme != null) ? filme.nome : null}}</h1>
+                    <p class="categoria">Genero: {{(filme != null) ? filme.categorias : null}}</p>
+                    <p class="categoria">Classificação Etária: {{(filme != null) ? filme.etaria : null}}</p>
+                    <p class="categoria">Tempo de Duração: {{(filme != null) ? filme.duracao : null}}</p>
+                </div>
+                <div class="divisaoResumo col-md-5">
+                    <div class="resumoTexto">
+                        <h1 class="titulo">{{(sessaoFilme != null) ? sessaoFilme.sala : null}}</h1>
+                        <p class="categoria">Horario: {{(sessaoFilme != null) ? sessaoFilme.hora : null}}</p>
+                        <p class="categoria">{{(sessaoFilme != null) ? sessaoFilme.tipo : null}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="finalizarCompra col-md-2">
+            <div class="ingresso row">
+                <div class="col-md-6">
+                    <p class="categoria">Valor <br> Final</p>
+                </div>
+                <div class="divisaoResumo col-md-6">
+                    <p class="categoria precoFinal">R$:</p>
+                </div>
+            </div>
+            <button class="confirmationButton">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
+
+<!--
+    duracaoMinHours(filme.duracao)
+
+-->
