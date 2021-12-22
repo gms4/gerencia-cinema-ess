@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     component: TelaIngressosComponent,
-    path: 'telaIngressos'
+    path: 'ingressos'
   }
 ];
 
