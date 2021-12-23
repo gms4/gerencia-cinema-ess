@@ -4,14 +4,19 @@ import { request } from "http";
 import { UserController } from "../controllers/user.controller";
 
 const sessoesSalaRouter = Router();
-const sessoesSalaController =  new SessoesSalaController();
+const sessoesSalaController =  SessoesSalaController.getInstance();
+
+sessoesSalaRouter.route("/")
+    .get((req: Request, res: Response) => {
+        let resultadoSala = sessoesSalaController.salas;
+        return res.json (resultadoSala);
+    });
 
 sessoesSalaRouter.route("/:numeroSala")
     .get((req: Request, res: Response) => {
-        /*
-            Deve retornar todas as sessoes da sala especificada (req.params.numeroSala)
-        */
-        return res.json ({Warning: "Essa rota ainda sera desenvolvida"});
+        let salaRequisicao = parseInt(req.params.numeroSala);
+        let resultadoSala = sessoesSalaController.getSalasByNumber(salaRequisicao);
+        return res.json (resultadoSala);
     })
     .post((req: Request, res: Response) => {
         /*
