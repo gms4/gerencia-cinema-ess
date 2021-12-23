@@ -4,12 +4,16 @@ export class Sessao {
     hora: string;
     tipo: string; //dublado ou legendado, sala comum ou 3d
     cadeirasSessao: string[][];
+    fileiras: number;
+    colunas: number;
 
     constructor(qtdFileiras: number, qtdColunas: number, hora: string, tipo: string) {
         this.qtdIngressosRestantes = qtdFileiras*qtdColunas;
         this.hora = hora;
         this.tipo = tipo;
         this.cadeirasSessao = [];
+        this.fileiras = qtdFileiras;
+        this.colunas = qtdColunas;
 
         for(let i = 0; i < qtdFileiras; i++){
             this.cadeirasSessao[i] = [];

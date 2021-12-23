@@ -73,10 +73,10 @@
                     <p class="categoria">Valor <br> Final</p>
                 </div>
                 <div class="divisaoResumo col-md-6">
-                    <p class="categoria precoFinal">R$:</p>
+                    <p class="categoria precoFinal">R$:{{calcularValor()}}</p>
                 </div>
             </div>
-            <button class="confirmationButton">Finalizar Compra</button>
+            <button (click)="checarCompra()" class="confirmationButton">Finalizar Compra</button>
         </div>
     </div>
 </div>
