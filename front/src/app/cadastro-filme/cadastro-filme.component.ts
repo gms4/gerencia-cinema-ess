@@ -58,24 +58,13 @@ export class CadastroFilmeComponent implements OnInit {
             this.premios = "";
             this.sinopse = "";
             this.sessoes = [];
-            console.log(message);
+            alert (message.message);
           },
           error: (err) => {
             alert(err.error.error);
           }
         })
     }
-  }
-
-  teste(){
-    console.log(this.nomeFilme+"\n");
-    console.log(this.categoria+"\n");
-    console.log(this.tempoFilme+"\n");
-    console.log(this.atores+"\n");
-    console.log(this.premios+"\n");
-    console.log(this.sinopse+"\n");
-    console.log(this.classificacao+"\n");
-    console.log(this.sessoes);
   }
 
   addSessao(){

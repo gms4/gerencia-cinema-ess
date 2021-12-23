@@ -64,8 +64,8 @@
                     <div class="row">
                         <div class="col-md-4 sessao" *ngFor="let sessao of filmeSessao.sessoes">
                             <button class="sessaoButton" (click) = "sessao.lotacao != 'Lotada' ? toTelaIngressos(filmeSessao, sessao) : null">
-                                {{sessao.sala}} <br> 
-                                    {{sessao.hora}} <br> 
+                                Sala {{sessao.sala}} <br> 
+                                    {{sessao.hora}} ({{sessao.tipo}})<br> 
                                     {{sessao.lotacao}}
                             </button>                       
                         </div>

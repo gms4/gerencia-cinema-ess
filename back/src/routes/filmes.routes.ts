@@ -61,7 +61,6 @@ filmesRouter.route("/")
         let filmeEncontrado = filmesController.getFilmeByName(nome); //Verifica se existe algum filme cadastrado com o nome
         if (filmeEncontrado){
             resultado = "errorFilmeJaCadastrado";
-            return res.json({resultado, nome, etaria, categorias, duracao, atores, premios, sinopse, tipo, sessoes});
         //Verificar se todas as salas que esse filme será inserido estarão vazias
         } else if ( (sessoesSala1.length > 0 && !sessoesSalaController.salaIsEmpty(1)) || 
                     (sessoesSala2.length > 0 && !sessoesSalaController.salaIsEmpty(2)) || 
@@ -69,7 +68,6 @@ filmesRouter.route("/")
                     (sessoesSala4.length > 0 && !sessoesSalaController.salaIsEmpty(4)) || 
                     (sessoesSala5.length > 0 && !sessoesSalaController.salaIsEmpty(5)) ){
                         resultado = "errorSalaOcupada";
-                        return res.json({resultado, nome, etaria, categorias, duracao, atores, premios, sinopse, tipo, sessoes});
         //Verificar se existe conflito entre as sessoes que serao cadastradas
         } else if ( (sessoesSala1.length > 0 && sessoesSalaController.hasConflict(sessoesSala1, duracao)) || 
                     (sessoesSala2.length > 0 && sessoesSalaController.hasConflict(sessoesSala2, duracao)) || 
@@ -77,7 +75,6 @@ filmesRouter.route("/")
                     (sessoesSala4.length > 0 && sessoesSalaController.hasConflict(sessoesSala4, duracao)) || 
                     (sessoesSala5.length > 0 && sessoesSalaController.hasConflict(sessoesSala5, duracao)) ){
                     resultado = "errorConflito";
-                    return res.json({resultado, nome, etaria, categorias, duracao, atores, premios, sinopse, tipo, sessoes});
         //Cadastrando filme
         } else {
             tipo = filmesController.deduzirTipo(sessoes);
@@ -88,7 +85,14 @@ filmesRouter.route("/")
 
             resultado = "filmeCorreto";
 
-            return res.json({resultado, nome, etaria, categorias, duracao, atores, premios, sinopse, tipo, sessoes});
+            if (resultado == "errorFilmeJaCadastrado"){
+                return res.status(409).json({ error: "Um filme com esse nome já esta cadastrado"});
+            } else if (resultado == "errorSalaOcupada") {
+                return res.status(409).json({ error: "Uma das salas esta ocupada"});
+            } else if (resultado == "errorConflito"){
+                return res.status(409).json({ error: "Sessoes Conflitantes"});
+            } // if (worked correctly)
+            return res.json({ message: "Filme cadastrado com sucesso!"});
         }
         
     })
