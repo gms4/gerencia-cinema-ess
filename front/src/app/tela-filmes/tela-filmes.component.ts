@@ -79,6 +79,6 @@ export class TelaFilmesComponent implements OnInit {
   toTelaIngressos(filmeSelecionado: Filme, sessaoFilmeSelecionada: sessaoFilme){
     this.SharedDataService.setFilmeSelecionado(filmeSelecionado);
     this.SharedDataService.setsessaoFilmeSelecionada(sessaoFilmeSelecionada);
-    this.router.navigate(["/telaIngressos"]); 
+    this.router.navigate(["/ingressos"]); 
   }
 }
