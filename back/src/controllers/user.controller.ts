@@ -35,7 +35,7 @@ export class UserController {
         return user;
     }
 
-    getUserByEmailOrCPF(emailOrCpf: string){
+    getUserByEmailOrCPF(emailOrCpf: string): User | null{
         const user = this.users.find(u => (u.cpf == emailOrCpf || u.email == emailOrCpf));
         return user;
     }
