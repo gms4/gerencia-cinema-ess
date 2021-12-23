@@ -58,7 +58,7 @@ export class CadastroFilmeComponent implements OnInit {
             this.premios = "";
             this.sinopse = "";
             this.sessoes = [];
-            alert(message.Warning);
+            console.log(message);
           },
           error: (err) => {
             alert(err.error.error);
