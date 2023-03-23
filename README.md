@@ -25,6 +25,14 @@ Outras tecnologias que usamos
 
 - Gherkin, para escrever as features
 - HTML e CSS, para desenvolver a aplicação web
+
+O "Cinema do Parque" tem features como
+
+- Cadastro de filmes por um funcionário
+- Cadastro e Login de clientes e funcionários
+- Compra de ingressos e escolha de assentos por um cliente
+- Listar filmes em cartaz
+
 ## Install
 [//]: # (https://github.com/izhangzhihao/intellij-rainbow-brackets#Install)
 Para rodar a aplicação, basta instalar as 
